@@ -47,7 +47,8 @@ channelg = imgOG(:,:,2);
 channelb = imgOG(:,:,3);
 clust_map = zeros(quantColors,3);
 
-% for each cluster, get positions and values of each pixel in cluster, compute mean color for cluster
+% get positions and values of each pixel in clusters,
+% and compute mean color values
 for i = 1:quantColors
     logindex = (L == i);
     pixels = cat(3,pixels,logindex);
@@ -66,5 +67,5 @@ imshow(imind, mapind)
 title("Posterized Image")
 
 % write posterized image and colorkey to files
-imwrite(imind,mapind,outFile);
-imwrite(ICK,clust_map,"colorkey_"+outFile);
+%imwrite(imind,mapind,outFile);
+%imwrite(ICK,clust_map,"colorkey_"+outFile);
